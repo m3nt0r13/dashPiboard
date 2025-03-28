@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pi Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/assets/index.css" rel="stylesheet" />
+  </head>
+  <body class="bg-gray-900 text-white font-sans">
+    <main class="p-4 max-w-screen-xl mx-auto">
+      <h1 class="text-2xl font-bold mb-4 text-center">Pi Dashboard</h1>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div class="bg-gray-800 p-4 rounded-xl shadow"><h2 class="text-sm text-gray-400">CPU</h2><p id="cpu" class="text-xl font-bold">–</p></div>
+        <div class="bg-gray-800 p-4 rounded-xl shadow"><h2 class="text-sm text-gray-400">RAM</h2><p id="ram" class="text-xl font-bold">–</p></div>
+        <div class="bg-gray-800 p-4 rounded-xl shadow"><h2 class="text-sm text-gray-400">Temp</h2><p id="temp" class="text-xl font-bold">–</p></div>
+        <div class="bg-gray-800 p-4 rounded-xl shadow"><h2 class="text-sm text-gray-400">VPN</h2><p id="vpn" class="text-xl font-bold">–</p></div>
+        <div class="bg-gray-800 p-4 rounded-xl shadow"><h2 class="text-sm text-gray-400">Updates</h2><p id="updates" class="text-xl font-bold">–</p></div>
+        <div class="bg-gray-800 p-4 rounded-xl shadow"><h2 class="text-sm text-gray-400">Disk /</h2><p id="disk" class="text-xl font-bold">–</p></div>
+      </div>
+
+      <div class="mt-6 bg-gray-800 p-4 rounded-xl shadow">
+        <h2 class="text-lg font-bold mb-2">Nmap Scan</h2>
+        <input id="nmapHost" placeholder="192.168.1.1" class="bg-gray-700 px-2 py-1 rounded mr-2" />
+        <button onclick="scanNmap()" class="bg-blue-600 hover:bg-blue-700 px-4 py-1 rounded">Skanuj</button>
+        <pre id="nmapResult" class="mt-4 text-sm bg-gray-900 p-2 rounded overflow-auto"></pre>
+      </div>
+
+      <div class="mt-6 bg-gray-800 p-4 rounded-xl shadow text-center">
+        <h2 class="text-lg font-bold mb-2">SSH Access (ShellInABox)</h2>
+        <p class="text-sm text-gray-400 mb-2">Kliknij, aby otworzyć sesję terminalową w przeglądarce (port 4200)</p>
+        <a href="http://{HOST}:4200" target="_blank">
+          <button class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded">Otwórz terminal</button>
+        </a>
+      </div>
+    </main>
+    <script src="/assets/index.js?v=3"></script>
+  </body>
+</html>
